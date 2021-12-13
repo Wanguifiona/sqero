@@ -1,0 +1,14 @@
+{{#partial "content"}}
+
+    <h1>Add a new Hero!</h1>
+
+    <form action="/hero/new" method="post">
+        <input type="text" placeholder="Hero's name" name="name" required>
+        <input type="number" placeholder="Hero's age" name="age" required>
+        <input type="text" placeholder="Hero's special powers" name="power" required>
+        <input type="text" placeholder="Hero's weakness" name="weakness" required>
+        <button type="submit" class="btn btn-default">Add new Hero </button>
+    </form>
+{{/partial}}
+
+{{> layout.hbs}}
