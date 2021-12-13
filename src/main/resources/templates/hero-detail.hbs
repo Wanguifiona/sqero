@@ -1,13 +1,11 @@
 {{#partial "content"}}
+    {{#each hero}}
     <div class="hero-part">
-    <p>Name:</p>
-    <p>{{ hero.name }}</p>
-    <p>Age:</p>
-    <p>{{ hero.age }}</p>
-    <p>Powers:</p>
-    <p>{{ hero.powers }}</p>
-    <p>Weakness:</p>
-    <p>{{ hero.weakness }}</p>
+<a href="/hero-form">Add new Hero to list</a>
+    <p>Name:{{ name }}</p>
+    <p>Age:{{ age }}</p>
+    <p>Powers:{{ powers }}</p>
+    <p>Weakness:{{ weakness }}</p>
     <p>
 
         {{#if post.published }}
@@ -17,6 +15,7 @@
         {{/if}}
     </p>
     </div>
+    {{/each}}
 {{/partial}}
 
 {{> layout.hbs}}

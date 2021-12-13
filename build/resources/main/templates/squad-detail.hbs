@@ -1,12 +1,10 @@
 {{#partial "content"}}
+{{#each squad}}
     <div class="squad-part">
-        <p>Name:</p>
-        <p>{{ squad.name }}</p>
-        <p>Size:</p>
-        <p>{{ squad.size }}</p>
-        <p>Cause:</p>
-        <p>{{ squad.cause }}</p>
-
+        <a href="/squad-form">Add new Squad to list</a>
+        <p>Name:{{ name }}</p>
+        <p>Size:{{ size }}</p>
+        <p>Cause:{{ cause }}</p>
         <p>
 
             {{#if post.published }}
@@ -16,6 +14,7 @@
             {{/if}}
         </p>
     </div>
+{{/each}}
 {{/partial}}
 
 {{> layout.hbs}}

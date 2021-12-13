@@ -19,11 +19,14 @@ public class App {
             return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
 
+
         post("/hero/new", (request, response) -> { //URL to make new post on POST route
             Map<String, Object> model = new HashMap<String, Object>();
             String name = request.queryParams("name");
-            Hero newHero = new Hero(name);
-            model.put("newHero", newHero);
+            Integer age = Integer.parseInt(request.queryParams("age"));
+            String powers = request.queryParams("powers");
+            String weakness = request.queryParams("weakness");
+            Hero newHero = new Hero(name,age,powers,weakness);
             return new ModelAndView(model, "success.hbs");
         }, new HandlebarsTemplateEngine());
 
@@ -36,8 +39,19 @@ public class App {
         get("/hero-detail",(req, res) ->{
             Map<String, Object> model = new HashMap<>();
             ArrayList<Hero> hero = Hero.getAll();
+            System.out.println(hero);
             model.put("hero",hero);
             return new ModelAndView(model, "hero-detail.hbs");
+        }, new HandlebarsTemplateEngine());
+
+
+        post("/squad/new", (request, response) -> { //URL to make new post on POST route
+            Map<String, Object> model = new HashMap<String, Object>();
+            String name = request.queryParams("name");
+            Integer size = Integer.parseInt(request.queryParams("size"));
+            String cause = request.queryParams("cause");
+            Squad newSquad = new Squad(name, size,cause);
+            return new ModelAndView(model, "success.hbs");
         }, new HandlebarsTemplateEngine());
 
         get("/squad-form", (request, response) -> {
@@ -48,17 +62,12 @@ public class App {
         get("/squad-detail",(req, res) ->{
             Map<String, Object> model = new HashMap<>();
             ArrayList<Squad> squad = Squad.getAll();
+            System.out.println(squad);
             model.put("squad",squad);
             return new ModelAndView(model, "squad-detail.hbs");
         }, new HandlebarsTemplateEngine());
 
-        post("/squad/new", (request, response) -> { //URL to make new post on POST route
-            Map<String, Object> model = new HashMap<String, Object>();
-            String name = request.queryParams("name");
-            Squad newSquad = new Squad(name);
-            model.put("newSquad", newSquad);
-            return new ModelAndView(model, "success.hbs");
-        }, new HandlebarsTemplateEngine());
+
 
     }
 }
