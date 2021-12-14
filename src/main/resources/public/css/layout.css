@@ -1,0 +1,43 @@
+body{
+    background-image: url(/images/pic1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 30px;
+}
+
+
+.container-fluid{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 170px;
+    padding-right: 170px;
+    margin-bottom: 100px;
+
+}
+
+a{
+    text-decoration: none !important;
+    color: white !important;
+    font-weight: 900;
+    opacity: 100%;
+}
+
+a:hover{
+    opacity: 100%;
+}
+h1{
+text-align: center;
+color: white;
+}
+
+
+#content{
+    width: 100%;
+    background-color: white;
+    padding-top: 100px;
+    border-radius: 250px;
+    padding-left: 170px;
+    padding-right: 170px;
+    height: 700px;
+}

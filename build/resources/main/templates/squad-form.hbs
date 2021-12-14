@@ -3,10 +3,21 @@
     <h1>Add a new Squad!</h1>
 
     <form action="/squad/new" method="post">
-        <input type="text" placeholder="Squad's name" name="name" required>
-        <input type="number" placeholder="Squad's size" name="size" required>
-        <input type="text" placeholder="Squad's Cause" name="cause" required>
-        <button type="submit" class="btn btn-default">Add new Squad </button>
+        <div class=form-group">
+            <label for ="name"> Squad Name</label>
+            <input type="text" style="margin-bottom: 30px;" name="name" required>
+        </div>
+        <div class=form-group">
+            <label for ="Size"> Squad Size</label>
+            <input type="number" style="margin-bottom: 30px;" name="size" required>
+        </div>
+        <div class=form-group">
+            <label for ="cause"> Squad Cause</label>
+            <input type="text" style="margin-bottom: 30px;" name="cause" required>
+        </div>
+        <br>
+        <br>
+        <button type="submit" class="btn btn-secondary">Add new Squad </button>
     </form>
 {{/partial}}
 
